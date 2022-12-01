@@ -17,12 +17,7 @@ function populateDemoInfo(sample) {
 // FUNCTION #2 of 4
 function buildChart(sample) {
   d3.json(BBUrl).then((data) => {
-    // console.log('samples[0]["otu_ids"]', data['samples'][0]["otu_ids"]);
-    // console.log('samples[0]["sample_values"]', data['samples'][0]["sample_values"]);
-    // console.log(data.samples);
     let Samdata = data.samples.filter(row => row.id == sample);
-    // console.log(Samdata);
-    // console.log(Samdata[0]["otu_ids"]);
     let sliceid = Samdata[0]["otu_ids"].slice(0,10);
     let slicelabel = Samdata[0]["otu_labels"].slice(0,10);
     let slicevalue = Samdata[0]["sample_values"].slice(0,10);
